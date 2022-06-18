@@ -1,11 +1,9 @@
 <html>
   <head>
-    <script type="module" src="./app.js"></script>
     <style>
       :root {
         --drop-size: 100px;
         --drop-radius: 100px;
-        --drop-color: yellow;
       }
       .container {
         display: flex;
@@ -56,19 +54,17 @@
         50% {
           filter: drop-shadow(
               var(--drop-size) var(--drop-size) var(--drop-radius) red
-                /* var(--drop-color) */
+
             )
             drop-shadow(
-              var(--drop-size) calc(-1 * var(--drop-size)) var(--drop-radius)
-                var(--drop-color)
+              var(--drop-size) calc(-1 * var(--drop-size)) var(--drop-radius) yellow
             )
             drop-shadow(
-              calc(-1 * var(--drop-size)) var(--drop-size) var(--drop-radius)
-                var(--drop-color)
-            )
+              calc(-1 * var(--drop-size)) var(--drop-size) var(--drop-radius) yellow      )
+      
             drop-shadow(
               calc(-1 * var(--drop-size)) calc(-1 * var(--drop-size))
-                var(--drop-radius) /* var(--drop-color) */ red
+                var(--drop-radius)  red
             );
         }
         100% {
