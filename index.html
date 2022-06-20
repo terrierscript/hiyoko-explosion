@@ -89,6 +89,7 @@
             );
         }
       }
+
       @keyframes explosion {
         0% {
         }
@@ -97,6 +98,23 @@
         }
         100% {
           filter: hue-rotate(-50deg) contrast(100%) brightness(10);
+        }
+      }
+      @keyframes smoke {
+        0%,
+        100% {
+          filter: drop-shadow(-3vh -20vh 40vh gray)
+            drop-shadow(-10vh 20vh 10vh pink) drop-shadow(10vh 10vh 8vh black);
+        }
+        25% {
+          filter: drop-shadow(3vh -20vh 10vh pink)
+            drop-shadow(-10vh 20vh 10vh green)
+            drop-shadow(-40vh -30vh 10vh gray);
+        }
+        75% {
+          filter: drop-shadow(3vh -20vh 10vh purple)
+            drop-shadow(-10vh 20vh 10vh gray)
+            drop-shadow(-40vh -30vh 10vh green);
         }
       }
       .target {
@@ -153,44 +171,40 @@
       .layer-part2 {
         top: -20;
       }
-      .layer-part3 {
+      .layer-wing {
+        filter: hue-rotate(200deg) brightness(2);
+      }
+      .layer-wing-1 {
         left: 80;
         top: -60;
         transform: rotate(20deg);
       }
-      .layer-part3-2 {
+      .layer-wing-2 {
         left: -80;
         top: -60;
         transform: rotate(-20deg) rotateY(180deg);
       }
-      .layer-part3-4 {
+      .layer-wing-4 {
         left: 80;
         top: 0;
         transform: rotate(60deg);
       }
-      .layer-part3-3 {
+      .layer-wing-3 {
         left: -80;
         top: 0;
         transform: rotate(-60deg) rotateY(180deg);
       }
-      .layer-part-4 {
+      .layer-tail {
         top: 150;
         left: 80;
-        filter: hue-rotate(120deg);
+        filter: hue-rotate(100deg);
       }
       .layer-fornt-1 {
         font-size: 40%;
         top: -20;
         left: 30%;
       }
-      .layer-fornt-2 {
-        font-size: 25%;
-        top: 20%;
-        left: 36%;
-        transform: scaleX(1.25) scaleY(0.9);
-        filter: hue-rotate(-20deg);
-      }
-      .layer-fornt-3 {
+      /* .layer-fornt-3 {
         top: 37%;
         left: 29%;
         font-size: 40%;
@@ -199,6 +213,25 @@
         top: 42%;
         left: 34%;
         font-size: 30%;
+      } */
+      .layer-heart {
+        top: 15%;
+        left: 30%;
+        /* font-size: 50%; */
+      }
+      .layer-heart .heart {
+        position: absolute;
+        font-size: 40%;
+      }
+      .layer-heart .heart-1 {
+        transform: rotate(30deg);
+        left: -4vh;
+        top: -2vh;
+      }
+      .layer-heart .heart-2 {
+        transform: rotate(-30deg);
+        left: 4vh;
+        top: -2vh;
       }
       .layer-fornt-4 {
         top: 30%;
@@ -207,7 +240,7 @@
       }
       .level1 {
         position: absolute;
-        /* opacity: 0; */
+        opacity: 0;
         /* debug */
       }
       /* .level2 {
@@ -218,6 +251,117 @@
         transition: 1s;
         transition-delay: 7s;
       }
+      .level2 {
+        animation: smoke 10s infinite alternate linear;
+      }
+      .layer-neck {
+        top: -10%;
+        font-size: 40%;
+        transform: skewY(10deg) scaleX(2);
+        filter: hue-rotate(-90deg);
+      }
+      .layer-eye {
+        font-size: 20%;
+        top: -10%;
+        left: -15%;
+        transform: scaleX(1.25) scaleY(0.9);
+        filter: hue-rotate(-30deg) brightness(1.5);
+      }
+      .layer-beak {
+        font-size: 40%;
+        top: -10%;
+        left: 0%;
+        transform: scale(-1, 1);
+        filter: hue-rotate(-10deg);
+        position: absolute;
+      }
+
+      .layer-beak .beak {
+        position: absolute;
+      }
+      /* .layer-beak .beak-1 {
+      } */
+      .layer-beak .beak-2 {
+        position: absolute;
+        top: 4.5vh;
+        left: 4vh;
+        /* top: 100%; */
+        /* left: -35%; */
+        font-size: 40%;
+        /* transform: scale(-1, -1); */
+      }
+      .layer-head {
+        font-size: 60%;
+        top: -30%;
+        left: -35%;
+        filter: hue-rotate(50deg);
+      }
+      .layer-drip {
+        top: 2%;
+        left: -20%;
+        font-size: 25%;
+        transform: rotate(-190deg);
+        filter: hue-rotate(-80deg);
+      }
+      .layer-comb {
+        top: -20%;
+        left: 10%;
+        font-size: 20%;
+        transform: rotate(180deg);
+      }
+      .layer-comb .comb2 {
+        position: absolute;
+        top: -40%;
+        left: -20%;
+      }
+      .layer-comb .comb3 {
+        position: absolute;
+        top: 20%;
+        left: 30%;
+      }
+      .layer-comb .comb4 {
+        position: absolute;
+        top: 20%;
+        left: 80%;
+        transform: rotate(-40deg);
+      }
+      .layer-foot {
+        transform: rotate(180deg) scaleY(0.8) scaleX(1.2);
+        font-size: 30%;
+        left: 65%;
+        top: 95%;
+        filter: contrast(1.2) hue-rotate(-30deg);
+      }
+      .layer-foot .foot-1 {
+        position: absolute;
+        left: 4vh;
+        transform: rotate(20deg);
+      }
+      .layer-foot .foot-2 {
+        position: absolute;
+        left: -4vh;
+        transform: rotate(-20deg);
+      }
+      .layer-front-wing {
+        position: absolute;
+        top: 0%;
+      }
+      .layer-front-wing .front-wing {
+        position: absolute;
+        font-size: 50%;
+        filter: hue-rotate(-10deg) contrast(1.4) saturate(0.8);
+        /* top: 10%; */
+      }
+      .layer-front-wing .front-wing-1 {
+        transform: rotate(-90deg) scale(-1, 1);
+        top: 10vh;
+        left: -5vh;
+      }
+      .layer-front-wing .front-wing-2 {
+        transform: rotate(90deg);
+        top: 10vh;
+        left: 20vh;
+      }
     </style>
   </head>
   <body>
@@ -225,19 +369,48 @@
       <div class="level2">
         <div class="target">
           <div class="lv2-container">
-            <div class="layer layer-part-4">🪱</div>
-            <div class="layer layer-part3-3">🦇</div>
-            <div class="layer layer-part3-4">🦇</div>
-            <div class="layer layer-part3">🦇</div>
-            <div class="layer layer-part3-2">🦇</div>
-            <div class="layer layer-part1">🦞</div>
+            <div class="layer layer-tail">🪱</div>
+            <div class="layer layer-wing layer-wing-3">🦅</div>
+            <div class="layer layer-wing layer-wing-4">🦅</div>
+            <div class="layer layer-wing layer-wing-1">🦅</div>
+            <div class="layer layer-wing layer-wing-2">🦅</div>
+            <!-- <div class="layer layer-part1">🦞</div>
             <div class="layer layer-part1-2">🦞</div>
-            <div class="layer layer-part2">🪰</div>
+            <div class="layer layer-part2">🪰</div> -->
             <div class="layer-base">🐥</div>
-            <div class="layer layer-fornt-1">👑</div>
-            <div class="layer layer-fornt-2">👁</div>
-            <div class="layer layer-fornt-3">🌞</div>
-            <div class="layer layer-fornt-3-2">🌚</div>
+            <div class="layer layer-heart">
+              <div class="heart heart-1">🦷</div>
+              <div class="heart heart-2">🦷</div>
+              <div class="heart heart-3">🦷</div>
+              <div class="heart heart-4">🦷</div>
+              <div class="heart heart-5">🦷</div>
+            </div>
+
+            <div class="layer layer-foot">
+              <div class="foot foot-1">🔱</div>
+              <div class="foot foot-2">🔱</div>
+            </div>
+            <div class="layer layer-front-wing">
+              <div class="front-wing front-wing-1">🪸</div>
+              <div class="front-wing front-wing-2">🪸</div>
+            </div>
+            <!-- <div class="layer layer-fornt-1">👑</div> -->
+            <!-- <div class="layer layer-fornt-3-2">🌚</div> -->
+            <!-- <div class="layer layer-heart">🌞</div> -->
+            <div class="layer layer-neck">🐛</div>
+            <div class="layer layer-comb">
+              <div class="comb">🌶</div>
+              <div class="comb2">🌶</div>
+              <div class="comb3">🌶</div>
+              <div class="comb4">🌶</div>
+            </div>
+            <div class="layer layer-head">🦄</div>
+            <div class="layer layer-drip">🌳</div>
+            <div class="layer layer-beak">
+              <div class="beak beak-2">✊</div>
+              <div class="beak beak-1">🫳</div>
+            </div>
+            <div class="layer layer-eye">👁</div>
           </div>
         </div>
       </div>
